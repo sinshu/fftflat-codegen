@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FftFlatCodegen", "FftFlatCodegen.csproj", "{DDB3F3F5-A661-4644-93BD-E38ACE5E443B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDB3F3F5-A661-4644-93BD-E38ACE5E443B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB3F3F5-A661-4644-93BD-E38ACE5E443B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB3F3F5-A661-4644-93BD-E38ACE5E443B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB3F3F5-A661-4644-93BD-E38ACE5E443B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36E7955A-6104-413A-BB79-F39BB729931C}
+	EndGlobalSection
+EndGlobal
