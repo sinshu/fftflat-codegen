@@ -4,8 +4,6 @@ namespace FftFlat
 {
     internal static unsafe class fft4g
     {
-
-
         internal static void cdft(int n, int isgn, double* a, int* ip, double* w)
         {
 

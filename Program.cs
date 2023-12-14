@@ -18,9 +18,9 @@ static class Program
             writer.WriteLine("    internal static unsafe class fft4g");
             writer.WriteLine("    {");
 
-            foreach (var (line, info) in lines.Zip(infos))
+            foreach (var (line, info) in lines.Zip(infos).SkipWhile(p => p.Second == LineInfo.None))
             {
-                if (info == LineInfo.LongComment || info == LineInfo.Include)
+                if (info == LineInfo.Include)
                 {
                     continue;
                 }
@@ -68,7 +68,7 @@ static class Program
                     }
                     else if (line.Contains("/*"))
                     {
-                        yield return LineInfo.LongComment;
+                        yield return LineInfo.None;
                         current = State.LongComment;
                     }
                     else if (line.StartsWith("void"))
@@ -95,12 +95,12 @@ static class Program
                 case State.LongComment:
                     if (line.Contains("*/"))
                     {
-                        yield return LineInfo.LongComment;
+                        yield return LineInfo.None;
                         current = State.None;
                     }
                     else
                     {
-                        yield return LineInfo.LongComment;
+                        yield return LineInfo.None;
                         current = State.LongComment;
                     }
                     break;
@@ -141,7 +141,6 @@ static class Program
     enum LineInfo
     {
         None,
-        LongComment,
         Comment,
         FunctionDeclaration,
         FunctionBegin,
