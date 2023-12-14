@@ -6,7 +6,6 @@ namespace FftFlat
     {
         internal static void cdft(int n, int isgn, double* a, int* ip, double* w)
         {
-
             if (n > (ip[0] << 2))
             {
                 makewt(n >> 2, ip, w);

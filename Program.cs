@@ -18,6 +18,8 @@ static class Program
             writer.WriteLine("    internal static unsafe class fft4g");
             writer.WriteLine("    {");
 
+            var previousLineWasFunctionDeclaration = false;
+
             foreach (var (line, info) in lines.Zip(infos).SkipWhile(p => p.Second == LineInfo.None))
             {
                 if (info == LineInfo.Include)
@@ -36,6 +38,12 @@ static class Program
                 {
                     if (line.Trim().StartsWith("void"))
                     {
+                        previousLineWasFunctionDeclaration = true;
+                        continue;
+                    }
+
+                    if (previousLineWasFunctionDeclaration && line.Trim().Length == 0)
+                    {
                         continue;
                     }
 
@@ -45,6 +53,8 @@ static class Program
                 }
 
                 writer.WriteLine("        " + result);
+
+                previousLineWasFunctionDeclaration = false;
             }
 
             writer.WriteLine("    }");
