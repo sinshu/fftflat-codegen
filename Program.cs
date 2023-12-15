@@ -49,7 +49,7 @@ static class Program
 
                     result = result.Replace(" sin(", " Math.Sin(");
                     result = result.Replace(" cos(", " Math.Cos(");
-                    result = result.Replace(" atan(", " Math.Atan(");
+                    result = result.Replace(" atan(1.0) ", " (Math.PI / 4) ");
                 }
 
                 writer.WriteLine("        " + result);
