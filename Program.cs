@@ -32,6 +32,9 @@ static class Program
                 if (info == LineInfo.FunctionDeclaration)
                 {
                     result = "internal static " + result;
+
+                    result = result.Replace("int *", "Pointer<int> ");
+                    result = result.Replace("double *", "Pointer<double> ");
                 }
 
                 if (info == LineInfo.FunctionBody)
