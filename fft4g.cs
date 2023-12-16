@@ -2,7 +2,7 @@
 
 namespace FftFlat
 {
-    internal static unsafe class fft4g
+    internal static class fft4g
     {
         internal static void cdft(int n, int isgn, Pointer<double> a, Pointer<int> ip, Pointer<double> w)
         {

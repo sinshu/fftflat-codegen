@@ -15,7 +15,7 @@ static class Program
             writer.WriteLine("");
             writer.WriteLine("namespace FftFlat");
             writer.WriteLine("{");
-            writer.WriteLine("    internal static unsafe class fft4g");
+            writer.WriteLine("    internal static class fft4g");
             writer.WriteLine("    {");
 
             var previousLineWasFunctionDeclaration = false;

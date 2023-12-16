@@ -17,8 +17,6 @@ namespace FftFlat
             set => span[i] = value;
         }
 
-        public Span<T> Span => span;
-
         public static Pointer<T> operator +(Pointer<T> p, int i)
         {
             return new Pointer<T>(p.span.Slice(i));
@@ -27,6 +25,16 @@ namespace FftFlat
         public static Pointer<T> operator +(int i, Pointer<T> p)
         {
             return new Pointer<T>(p.span.Slice(i));
+        }
+
+        public static implicit operator Pointer<T>(Span<T> span)
+        {
+            return new Pointer<T>(span);
+        }
+
+        public static implicit operator Span<T>(Pointer<T> p)
+        {
+            return p.span;
         }
     }
 }
